@@ -31,8 +31,11 @@ jobs:
     - name: install Node.js
       uses: actions/setup-node@v4
 
+    - run: yarn install
+
     - name: build
       run: yarn build
+      
 
   linters:
     needs: dependencies
@@ -46,6 +49,7 @@ jobs:
     - name: install Node.js
       uses: actions/setup-node@v4
 
+    - run: yarn install
     
     - name: start linters
       run: yarn linters
@@ -61,6 +65,8 @@ jobs:
 
     - name: install Node.js
       uses: actions/setup-node@v4
+
+    - run: yarn install
     
     - name: start deploy
       run: yarn deploy
