@@ -10,10 +10,10 @@ jobs:
     
     steps: 
     - name: checkout code
-    - uses: actions/checkout@v3
+      uses: actions/checkout@v3
 
     - name: install Node.js
-    - uses: actions/setup-node@v4
+      uses: actions/setup-node@v4
       with:
         cache: 'yarn'
 
@@ -26,13 +26,13 @@ jobs:
 
     steps:
     - name: checkout code
-    - uses: actions/checkout@v3
+      uses: actions/checkout@v3
 
     - name: install Node.js
-    - uses: actions/setup-node@v4
+      uses: actions/setup-node@v4
 
     - name: build
-    - run: yarn build
+      run: yarn build
 
   linters:
     needs: dependencies
@@ -41,14 +41,14 @@ jobs:
 
     steps:
     - name: checkout code
-    - uses: actions/checkout@v3
+      uses: actions/checkout@v3
 
     - name: install Node.js
-    - uses: actions/setup-node@v4
+      uses: actions/setup-node@v4
 
     
     - name: start linters
-    - run: yarn linters
+      run: yarn linters
 
   deploy:
     needs: [dependencies, build]
@@ -57,13 +57,13 @@ jobs:
 
     steps:
     - name: checkout code
-    - uses: actions/checkout@v3
+      uses: actions/checkout@v3
 
     - name: install Node.js
-    - uses: actions/setup-node@v4
+      uses: actions/setup-node@v4
     
     - name: start deploy
-    - run: yarn deploy
+      run: yarn deploy
     
     
 
