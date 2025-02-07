@@ -5,7 +5,6 @@ on:
     
 jobs:
   dependencies:
-    name: Install Dependencies
     runs-on: ubuntu-latest
     
     steps: 
@@ -22,7 +21,6 @@ jobs:
 
   build:
     needs: dependencies
-    name: build
     runs-on: ubuntu-latest
 
     steps:
@@ -43,7 +41,6 @@ jobs:
 
   linters:
     needs: dependencies
-    name: linters
     runs-on: ubuntu-latest
 
     steps:
@@ -63,7 +60,6 @@ jobs:
 
   deploy:
     needs: [dependencies, build]
-    name: deploy
     runs-on: ubuntu-latest
 
     steps:
